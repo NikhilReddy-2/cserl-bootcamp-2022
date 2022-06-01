@@ -106,6 +106,8 @@ int             pipewrite(struct pipe*, char*, int);
 int             cpuid(void);
 void            exit(void);
 int             fork(void);
+void			get_siblings_info(void);
+int				get_ancestors(int n, int *array);
 int             growproc(int);
 int             kill(int);
 struct cpu*     mycpu(void);

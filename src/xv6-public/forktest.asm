@@ -44,7 +44,7 @@ forktest(void)
   int n, pid;
 
   printf(1, "fork test\n");
-  34:	68 54 03 00 00       	push   $0x354
+  34:	68 64 03 00 00       	push   $0x364
   39:	6a 01                	push   $0x1
   3b:	e8 c0 ff ff ff       	call   0 <printf>
 
@@ -88,14 +88,14 @@ forktest(void)
     printf(1, "fork claimed to work N times!\n", N);
   7f:	83 ec 04             	sub    $0x4,%esp
   82:	68 e8 03 00 00       	push   $0x3e8
-  87:	68 94 03 00 00       	push   $0x394
+  87:	68 a4 03 00 00       	push   $0x3a4
   8c:	6a 01                	push   $0x1
   8e:	e8 6d ff ff ff       	call   0 <printf>
     exit();
   93:	e8 1a 02 00 00       	call   2b2 <exit>
       printf(1, "wait stopped early\n");
   98:	83 ec 08             	sub    $0x8,%esp
-  9b:	68 5f 03 00 00       	push   $0x35f
+  9b:	68 6f 03 00 00       	push   $0x36f
   a0:	6a 01                	push   $0x1
   a2:	e8 59 ff ff ff       	call   0 <printf>
       exit();
@@ -113,7 +113,7 @@ forktest(void)
 
   printf(1, "fork test OK\n");
   b6:	83 ec 08             	sub    $0x8,%esp
-  b9:	68 86 03 00 00       	push   $0x386
+  b9:	68 96 03 00 00       	push   $0x396
   be:	6a 01                	push   $0x1
   c0:	e8 3b ff ff ff       	call   0 <printf>
 }
@@ -123,7 +123,7 @@ forktest(void)
   cc:	c3                   	ret    
     printf(1, "wait got too many\n");
   cd:	83 ec 08             	sub    $0x8,%esp
-  d0:	68 73 03 00 00       	push   $0x373
+  d0:	68 83 03 00 00       	push   $0x383
   d5:	6a 01                	push   $0x1
   d7:	e8 24 ff ff ff       	call   0 <printf>
     exit();
@@ -594,3 +594,15 @@ SYSCALL(uptime)
  34a:	b8 0e 00 00 00       	mov    $0xe,%eax
  34f:	cd 40                	int    $0x40
  351:	c3                   	ret    
+
+00000352 <get_siblings_info>:
+SYSCALL(get_siblings_info)
+ 352:	b8 16 00 00 00       	mov    $0x16,%eax
+ 357:	cd 40                	int    $0x40
+ 359:	c3                   	ret    
+
+0000035a <get_ancestors>:
+SYSCALL(get_ancestors)
+ 35a:	b8 17 00 00 00       	mov    $0x17,%eax
+ 35f:	cd 40                	int    $0x40
+ 361:	c3                   	ret    

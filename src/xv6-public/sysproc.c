@@ -89,3 +89,20 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+void
+sys_get_siblings_info(void)
+{
+	get_siblings_info();
+}
+
+int sys_get_ancestors(void)
+{
+	int n;
+	int *arr;
+	if(argint(0, &n) < 0)
+		return -1;
+  	if(argptr(1, (void*)&arr, 2*sizeof(arr[0])) < 0)
+		return -1;
+	return get_ancestors(n, arr); 
+}

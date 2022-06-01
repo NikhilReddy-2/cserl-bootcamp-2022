@@ -23,6 +23,8 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
+void get_siblings_info(void);
+int get_ancestors(int, int*);
 
 // ulib.c
 int stat(const char*, struct stat*);

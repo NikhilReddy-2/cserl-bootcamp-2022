@@ -572,3 +572,10 @@ get_ancestors(int n, int *array)
 	release(&ptable.lock);
 	return n == 0;
 }
+
+int
+getppid()
+{
+	struct proc *curproc = myproc();
+	return curproc->parent->pid;
+}

@@ -108,6 +108,7 @@ void            exit(void);
 int             fork(void);
 void			get_siblings_info(void);
 int				get_ancestors(int n, int *array);
+int				getppid(void);
 int             growproc(int);
 int             kill(int);
 struct cpu*     mycpu(void);

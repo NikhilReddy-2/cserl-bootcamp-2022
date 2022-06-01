@@ -106,3 +106,8 @@ int sys_get_ancestors(void)
 		return -1;
 	return get_ancestors(n, arr); 
 }
+
+int sys_getppid(void)
+{
+	return getppid();
+}

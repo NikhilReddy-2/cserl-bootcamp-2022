@@ -105,6 +105,7 @@ extern int sys_write(void);
 extern int sys_uptime(void);
 extern int sys_get_siblings_info(void);
 extern int sys_get_ancestors(void);
+extern int sys_getppid(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -130,6 +131,7 @@ static int (*syscalls[])(void) = {
 [SYS_close]   sys_close,
 [SYS_get_siblings_info] sys_get_siblings_info,
 [SYS_get_ancestors] sys_get_ancestors,
+[SYS_getppid] sys_getppid,
 };
 
 void
